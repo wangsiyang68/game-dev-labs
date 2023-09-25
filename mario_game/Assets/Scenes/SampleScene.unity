@@ -2596,6 +2596,7 @@ GameObject:
   - component: {fileID: 1096318137}
   - component: {fileID: 1096318138}
   - component: {fileID: 1096318139}
+  - component: {fileID: 1096318140}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Untagged
@@ -2757,11 +2758,14 @@ MonoBehaviour:
   speed: 150
   maxSpeed: 5
   upSpeed: 30
+  deathImpulse: 45
+  alive: 1
   scoreText: {fileID: 594787077}
   restartButton: {fileID: 1183689687}
   enemies: {fileID: 676144789}
   jumpOverGoomba: {fileID: 1096318139}
   gameOverCanvas: {fileID: 16875943}
+  marioAnimator: {fileID: 1096318140}
 --- !u!114 &1096318139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2782,6 +2786,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   startPosition: {x: 0, y: 0, z: 0}
+--- !u!95 &1096318140
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096318133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7d187334d4b4304493f1b28701f7b3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1136160667
 GameObject:
   m_ObjectHideFlags: 0
