@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
-    public Vector3 startPosition = new Vector3(7.04f, 1.10046f, 0.0f);
+    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     void Start()
     {
