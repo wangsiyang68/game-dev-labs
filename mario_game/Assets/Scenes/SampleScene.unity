@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3622155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: question_block (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1851330329287496093, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8507914451286918987, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1574397
@@ -750,6 +754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: brick_brown (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7880047972229689717, guid: 2eb91daf99a572c42bf835180a762169, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -852,6 +860,10 @@ PrefabInstance:
     - target: {fileID: 7880047972229689717, guid: 2eb91daf99a572c42bf835180a762169, type: 3}
       propertyPath: m_Name
       value: brick_brown (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880047972229689717, guid: 2eb91daf99a572c42bf835180a762169, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1086,6 +1098,10 @@ PrefabInstance:
     - target: {fileID: 1851330329287496093, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
       propertyPath: m_Name
       value: question_block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851330329287496093, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8507914451286918987, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1549,7 +1565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676144790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,6 +2721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: question_block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1851330329287496093, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8507914451286918987, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1574397
@@ -3049,7 +3069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1680714754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pipes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3304,6 +3324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: question_block
       objectReference: {fileID: 0}
+    - target: {fileID: 1851330329287496093, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8507914451286918987, guid: db8fef02bfa6f3040954c1e993a22394, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.1574397
@@ -3361,6 +3385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goomba
       objectReference: {fileID: 0}
+    - target: {fileID: 6281143287056387775, guid: ba68874065a29d4408e5f2a2af33b1c4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8920491534298982561, guid: ba68874065a29d4408e5f2a2af33b1c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3414,9 +3442,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680714754}
     m_Modifications:
+    - target: {fileID: 899784573581841578, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159305379498469001, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6033955446932593186, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
       propertyPath: m_Name
       value: Pipe-Large
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033955446932593186, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528641156170059484, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8546892427860949041, guid: e4c3a3d5fb98c9743815f785c2c314a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3515,6 +3559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: brick_brown
       objectReference: {fileID: 0}
+    - target: {fileID: 7880047972229689717, guid: 2eb91daf99a572c42bf835180a762169, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3528,9 +3576,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1680714754}
     m_Modifications:
+    - target: {fileID: 1724526922992900083, guid: 5a0e1f17fa6106b43b9a3e6c100a1962, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2406436313366902807, guid: 5a0e1f17fa6106b43b9a3e6c100a1962, type: 3}
       propertyPath: m_Name
       value: Pipe-Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406436313366902807, guid: 5a0e1f17fa6106b43b9a3e6c100a1962, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8265195186146596674, guid: 5a0e1f17fa6106b43b9a3e6c100a1962, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3625,9 +3681,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4115730071869921532, guid: 57434af8877c0cb43b2c37b912131d60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6976295098049848538, guid: 57434af8877c0cb43b2c37b912131d60, type: 3}
       propertyPath: m_Name
       value: Pipe-Medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976295098049848538, guid: 57434af8877c0cb43b2c37b912131d60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583904887136672052, guid: 57434af8877c0cb43b2c37b912131d60, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
