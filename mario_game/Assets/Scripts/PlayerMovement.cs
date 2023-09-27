@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public JumpOverGoomba jumpOverGoomba;
     public GameObject gameOverCanvas;
     public Animator marioAnimator;
+    public AudioSource marioAudio;
+    public AudioClip marioDeath;
     private bool onGroundState = true;
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
@@ -122,11 +124,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Collided with goomba!");
             // play death animation
             marioAnimator.Play("mario-death");
-            // marioAudio.PlayOneShot(marioDeath);
+            marioAudio.PlayOneShot(marioDeath);
             alive = false;
         }
     }
-
+    void PlayJumpSound()
+    {
+        // play jump sound
+        marioAudio.PlayOneShot(marioAudio.clip);
+    }
     void PlayDeathImpulse()
     {
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
