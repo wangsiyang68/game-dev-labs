@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public JumpOverGoomba jumpOverGoomba;
     public GameObject gameOverCanvas;
     public Animator marioAnimator;
-
     private bool onGroundState = true;
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
