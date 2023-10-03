@@ -30,7 +30,7 @@ public class CoinControllerBrick : MonoBehaviour
             coinAnimator.Play("coin-spawn");
 
             //destroy the coin
-            Destroy(coin, 1f);
+            Destroy(coin, 1.1f);
         }
     }
     void PlayCoinSound()
