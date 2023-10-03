@@ -6,12 +6,12 @@ using TMPro;
 public class HUDManager : MonoBehaviour
 {
     private Vector3[] scoreTextPosition = {
-        new Vector3(-747, 473, 0),
+        new Vector3(-163, 80, 0),
         new Vector3(0, 0, 0)
         };
     private Vector3[] restartButtonPosition = {
-        new Vector3(844, 455, 0),
-        new Vector3(0, -150, 0)
+        new Vector3(-64, 98, 0),
+        new Vector3(-8, -43, 0)
     };
 
     public GameObject scoreText;

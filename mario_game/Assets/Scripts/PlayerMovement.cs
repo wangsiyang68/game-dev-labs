@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         marioAnimator.SetBool("onGround", onGroundState);
         // get camera coordinates
         gameCamera = Camera.main.transform;
+        // for accessing the game over function in transition?
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -165,7 +167,10 @@ public class PlayerMovement : MonoBehaviour
     {
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
     }
-
+    void GameOverScene()
+    {
+        gameManager.GameOver();
+    }
     // public void RestartButtonCallback(int input)
     // {
     //     Debug.Log("Restart!");
@@ -203,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
     public void GameRestart()
     {
         // reset position
-        marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
+        marioBody.transform.position = new Vector3(-14.05f, -0.47f, 0.0f);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
@@ -213,6 +218,6 @@ public class PlayerMovement : MonoBehaviour
         alive = true;
 
         // reset camera position
-        gameCamera.position = new Vector3(0, 0, -10);
+        gameCamera.position = new Vector3(-14, 0, -10);
     }
 }
