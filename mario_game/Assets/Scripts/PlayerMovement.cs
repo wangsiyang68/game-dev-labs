@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [System.NonSerialized]
     public bool alive = true;
     public GameManager gameManager;
-    public JumpOverGoomba jumpOverGoomba;
+    // public JumpOverGoomba jumpOverGoomba;
     public Animator marioAnimator;
     public AudioSource marioAudio;
     public AudioClip marioDeath;
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
+    private StompOnGoomba stompOnGoomba;
 
     private Transform gameCamera;
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         gameCamera = Camera.main.transform;
         // for accessing the game over function in transition?
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        stompOnGoomba = GetComponent<StompOnGoomba>();
     }
 
     // Update is called once per frame
@@ -150,12 +152,21 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") && alive)
-        {
-            Debug.Log("Collided with goomba!");
-            // play death animation
-            marioAnimator.Play("mario-death");
-            marioAudio.PlayOneShot(marioDeath);
-            alive = false;
+        { 
+            if (marioBody.velocity.y >= 0)
+            {
+                Debug.Log("Collided with goomba!");
+                // play death animation
+                marioAnimator.Play("mario-death");
+                marioAudio.PlayOneShot(marioDeath);
+                alive = false;
+            } 
+            else
+            {
+                // stompOnGoomba.Stomp();
+                Debug.Log("Stomped on " + other.gameObject.name);
+                gameManager.ScoreByStomp(other.gameObject.name);
+            }
         }
     }
     void PlayJumpSound()

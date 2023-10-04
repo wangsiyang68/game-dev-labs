@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent gameRestart;
     public UnityEvent<int> scoreChange;
     public UnityEvent gameOver;
+    public UnityEvent<string> flatten;
 
     private int score = 0; // we don't want this to show up in the inspector
     // Start is called before the first frame update
@@ -43,6 +44,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         gameOver.Invoke();
+    }
+
+    public void ScoreByStomp(string name)
+    {
+        IncreaseScore(1);
+        flatten.Invoke(name);
     }
 
     // Update is called once per frame

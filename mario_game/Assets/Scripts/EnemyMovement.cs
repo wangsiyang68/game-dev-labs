@@ -11,14 +11,20 @@ public class EnemyMovement : MonoBehaviour
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
-    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    private SpriteRenderer spriteRenderer;
+    private bool flattenState; 
 
+    public Vector3 startPosition;
+    public Sprite stompedGoomba;
     void Start()
     {
+        startPosition = transform.localPosition;
+        Debug.Log("start " + transform.name + startPosition.x + " " + startPosition.y + " " + startPosition.z);
         enemyBody = GetComponent<Rigidbody2D>();
         // get the starting position
         originalX = transform.position.x;
         ComputeVelocity();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
     void ComputeVelocity()
     {
@@ -31,6 +37,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void GameRestart()
     {
+        Debug.Log("restart " + transform.name + startPosition.x + " " + startPosition.y + " " + startPosition.z);
         transform.localPosition = startPosition;
         originalX = transform.position.x;
         moveRight = -1;
@@ -40,21 +47,33 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
-        {// move goomba
-            Movegoomba();
-        }
-        else
+        if (!flattenState)
         {
-            // change direction
-            moveRight *= -1;
-            ComputeVelocity();
-            Movegoomba();
+            if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
+            {// move goomba
+                Movegoomba();
+            }
+            else
+            {
+                // change direction
+                moveRight *= -1;
+                ComputeVelocity();
+                Movegoomba();
+            }
+
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name);
+    }
+    public void flatten()
+    {
+        flattenState = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        spriteRenderer.sprite = stompedGoomba;
+        // Destroy after 1s
+        Destroy(gameObject, 0.5f);
     }
 }

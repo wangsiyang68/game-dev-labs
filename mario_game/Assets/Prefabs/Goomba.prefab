@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8920491534298982561}
   - component: {fileID: 3185603053493488790}
   - component: {fileID: 8831815300037625579}
-  - component: {fileID: 8135581893014078358}
   - component: {fileID: 6561928556733997014}
+  - component: {fileID: 919500213863212}
   m_Layer: 0
   m_Name: Goomba
   m_TagString: Enemy
@@ -114,7 +114,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8135581893014078358
+--- !u!114 &6561928556733997014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281143287056387775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe31107dcc17e7478bd7f6ad3caa37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  stompedGoomba: {fileID: 21300004, guid: 7eb68ac47e5fe4bbca37c767951ce034, type: 3}
+--- !u!61 &919500213863212
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,16 +173,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6561928556733997014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6281143287056387775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe31107dcc17e7478bd7f6ad3caa37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0, z: 0}
