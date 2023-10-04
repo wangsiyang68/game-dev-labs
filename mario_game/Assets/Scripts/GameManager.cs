@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<int> scoreChange;
     public UnityEvent gameOver;
     public UnityEvent<string> flatten;
+    public UnityEvent<float> stompSfx;
 
     private int score = 0; // we don't want this to show up in the inspector
     // Start is called before the first frame update
@@ -52,6 +53,10 @@ public class GameManager : MonoBehaviour
         flatten.Invoke(name);
     }
 
+    public void SetStompSfxPitch(float velocity)
+    {
+        stompSfx.Invoke(velocity);
+    }
     // Update is called once per frame
     void Update()
     {

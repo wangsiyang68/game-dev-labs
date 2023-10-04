@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // public JumpOverGoomba jumpOverGoomba;
     public Animator marioAnimator;
     public AudioSource marioAudio;
-    public AudioClip marioDeath;
+    public AudioSource marioDeath;
+    public AudioSource marioStomp;
 
     private bool onGroundState = true;
     private Rigidbody2D marioBody;
@@ -148,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
             jumpedState = false;
 
         }
-    }
+    }   
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") && alive)
@@ -158,13 +159,16 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Collided with goomba!");
                 // play death animation
                 marioAnimator.Play("mario-death");
-                marioAudio.PlayOneShot(marioDeath);
+                // marioAudio.PlayOneShot(marioDeath);
+                marioDeath.PlayOneShot(marioDeath.clip);
                 alive = false;
             } 
             else
             {
                 // stompOnGoomba.Stomp();
                 Debug.Log("Stomped on " + other.gameObject.name);
+                gameManager.SetStompSfxPitch(marioBody.velocity.y * -1);
+                marioStomp.PlayOneShot(marioStomp.clip);
                 gameManager.ScoreByStomp(other.gameObject.name);
             }
         }
