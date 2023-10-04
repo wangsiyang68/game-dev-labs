@@ -73,7 +73,7 @@ public class EnemyMovement : MonoBehaviour
         flattenState = true;
         GetComponent<BoxCollider2D>().enabled = false;
         spriteRenderer.sprite = stompedGoomba;
-        // Destroy after 1s
+        // Destroy after 0.5s
         Destroy(gameObject, 0.5f);
     }
 }
