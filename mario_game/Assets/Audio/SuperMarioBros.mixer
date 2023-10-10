@@ -159,7 +159,7 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: 3769ebbbe57ec334da14963fd0358a72
+  - guid: 6549754f4adda6649a3278a745648b65
     name: SpecialPitch
   m_AudioMixerGroupViews:
   - guids:
