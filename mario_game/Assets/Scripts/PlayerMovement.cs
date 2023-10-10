@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Transform gameCamera;
     // Start is called before the first frame update
+    void Awake()
+    {
+        // subscribe to Game Restart event
+        GameManager.instance.gameRestart.AddListener(GameRestart);
+    }
     void Start()
     {
         marioSprite = GetComponent<SpriteRenderer>();
@@ -40,6 +46,17 @@ public class PlayerMovement : MonoBehaviour
         // for accessing the game over function in transition?
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         stompOnGoomba = GetComponent<StompOnGoomba>();
+        // subscribe to scene manager scene change
+        SceneManager.activeSceneChanged += SetStartingPosition;
+    }
+
+    public void SetStartingPosition(Scene current, Scene next)
+    {
+        if (next.name == "World-1-2")
+        {
+            // change the position accordingly in your World-1-2 case
+            this.transform.position = new Vector3(2.5f, 0.5f, 0.0f);
+        }
     }
 
     // Update is called once per frame

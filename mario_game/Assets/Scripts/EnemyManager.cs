@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    void Awake()
+    {
+        // other instructions
+        GameManager.instance.flatten.AddListener(flattenChild);
+        GameManager.instance.gameRestart.AddListener(GameRestart);
+    }
     void Start()
     {
         

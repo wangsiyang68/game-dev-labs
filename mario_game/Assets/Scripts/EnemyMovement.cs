@@ -63,10 +63,6 @@ public class EnemyMovement : MonoBehaviour
 
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("goombz collide with "+ col.gameObject.name);
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

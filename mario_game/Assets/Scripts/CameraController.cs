@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     {
         // get coordinate of the bottomleft of the viewport
         // z doesn't matter since the camera is orthographic
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         viewportHalfWidth = Mathf.Abs(bottomLeft.x - this.transform.position.x);
         offset = this.transform.position.x - player.position.x;

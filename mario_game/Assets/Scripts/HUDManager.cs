@@ -19,6 +19,17 @@ public class HUDManager : MonoBehaviour
 
     public GameObject gameOverCanvas;
     // Start is called before the first frame update
+    void Awake()
+    {
+        // other instructions
+        // subscribe to events
+        GameManager.instance.gameStart.AddListener(GameStart);
+        GameManager.instance.gameOver.AddListener(GameOver);
+        GameManager.instance.gameRestart.AddListener(GameStart);
+        GameManager.instance.scoreChange.AddListener(SetScore);
+
+    }
+
     void Start()
     {
     }
