@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameConstants gameConstants;
+    //float deathImpulse;
+    //float upSpeed;
+    //float maxSpeed;
+    //float speed;
     public float speed = 10;
     public float maxSpeed = 20;
     public float upSpeed = 10;
@@ -35,6 +40,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        // Set constants
+        //speed = gameConstants.speed;
+        //maxSpeed = gameConstants.maxSpeed;
+        //deathImpulse = gameConstants.deathImpulse;
+        //upSpeed = gameConstants.upSpeed;
+        Debug.Log("speed: " + speed + " maxspeed: " + maxSpeed +" dI: " + deathImpulse + " uS: " + upSpeed);
+        // Get mario Sprite Renderer
         marioSprite = GetComponent<SpriteRenderer>();
         // Set to be 30 FPS
         Application.targetFrameRate = 30;
@@ -47,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         stompOnGoomba = GetComponent<StompOnGoomba>();
         // subscribe to scene manager scene change
-        SceneManager.activeSceneChanged += SetStartingPosition;
+        // SceneManager.activeSceneChanged += SetStartingPosition;
     }
 
     public void SetStartingPosition(Scene current, Scene next)
@@ -126,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
             // check if it doesn't go beyond maxSpeed
             if (marioBody.velocity.magnitude < maxSpeed)
             {
+                Debug.Log("adding force of: " + movement * speed);
                 marioBody.AddForce(movement * speed);
             }
        

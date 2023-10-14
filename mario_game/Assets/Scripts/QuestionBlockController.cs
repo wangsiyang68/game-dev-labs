@@ -34,7 +34,7 @@ public class QuestionBlockController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collided with mario!");
+        Debug.Log("QB Collided with mario!");
         // change the sprite to a brown block
         questionBlockSprite.sprite = block_brown;
         // stop the blinking animation

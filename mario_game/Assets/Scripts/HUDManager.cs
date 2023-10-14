@@ -6,18 +6,21 @@ using TMPro;
 public class HUDManager : MonoBehaviour
 {
     private Vector3[] scoreTextPosition = {
-        new Vector3(-163, 80, 0),
-        new Vector3(0, 0, 0)
+        new Vector3(-215, 80, 0),
+        new Vector3(0, 10, 0)
         };
     private Vector3[] restartButtonPosition = {
-        new Vector3(-64, 98, 0),
-        new Vector3(-8, -43, 0)
+        new Vector3(-120, 100, 0),
+        new Vector3(0, -45, 0)
     };
 
     public GameObject scoreText;
     public Transform restartButton;
-
+    public GameObject highscoreText;
     public GameObject gameOverCanvas;
+    public IntVariable gameScore;
+    public GameObject playPauseButton;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,7 +30,6 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.gameOver.AddListener(GameOver);
         GameManager.instance.gameRestart.AddListener(GameStart);
         GameManager.instance.scoreChange.AddListener(SetScore);
-
     }
 
     void Start()
@@ -43,9 +45,11 @@ public class HUDManager : MonoBehaviour
     public void GameStart()
     {
         // hide gameover Canvas
+        Debug.Log("HUD GAME START CALLED");
         gameOverCanvas.SetActive(false);
         scoreText.transform.localPosition = scoreTextPosition[0];
         restartButton.localPosition = restartButtonPosition[0];
+        playPauseButton.SetActive(true);
     }
 
     public void SetScore(int score)
@@ -59,5 +63,10 @@ public class HUDManager : MonoBehaviour
         gameOverCanvas.SetActive(true);
         scoreText.transform.localPosition = scoreTextPosition[1];
         restartButton.localPosition = restartButtonPosition[1];
+        // set highscore
+        highscoreText.GetComponent<TextMeshProUGUI>().text = "HIGHSCORE : " + gameScore.previousHighestValue.ToString("D6");
+        // show
+        highscoreText.SetActive(true);
+        playPauseButton.SetActive(false);
     }
 }

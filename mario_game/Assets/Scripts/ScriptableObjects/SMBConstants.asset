@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0a76d4e0778d94d9182f74660b5d82, type: 3}
+  m_Name: SMBConstants
+  m_EditorClassIdentifier: 
+  maxLives: 10
+  speed: 10
+  maxSpeed: 20
+  upSpeed: 10
+  deathImpulse: 45
+  marioStartingPosition: {x: 0, y: 0, z: 0}
+  goombaPatrolTime: 0
+  goombaMaxOffset: 0
