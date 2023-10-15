@@ -6,10 +6,26 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
 {
     public Animator powerupAnimator;
     public BasePowerup powerup; // reference to this question box's powerup
-
-    void Start()
+    public GameManager gameManager;
+    public GameObject powerupPrefab;
+    void Awake()
     {
-
+        // subscribe to Game Restart event
+        GameManager.instance.gameRestart.AddListener(GameRestart);
+    }
+    void GameRestart()
+    {
+        // set powerup to unpowered up mode
+        if (powerup == null)
+        {
+            // instantiate the selected prefab
+            GameObject powerupObject = Instantiate(powerupPrefab, this.transform);
+            // remap the variables in the inspector
+            powerup = powerupObject.GetComponent<BasePowerup>();
+            powerupAnimator = powerupObject.GetComponentInChildren<Animator>();
+        }
+        // play blinking animation
+        this.GetComponent<Animator>().Play("Question-Block-Blink");
     }
 
     // Update is called once per frame
@@ -23,6 +39,7 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
         // turn on collider and set dynamic 
         powerup.GetComponent<BoxCollider2D>().enabled = true;
         powerup.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        powerup.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         // typically contain a yield return statement
         yield return new WaitForSeconds(0.1f);        
         // spawn the powerup

@@ -11,6 +11,9 @@ public class QuestionBlockController : MonoBehaviour
     private Rigidbody2D questionBlockBody;
     [System.NonSerialized]
     public bool collided;
+    public GameObject powerupPrefab;
+
+    public GameObject powerup;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,17 @@ public class QuestionBlockController : MonoBehaviour
         questionBlockBody = GetComponent<Rigidbody2D>();
         collided = false;
     }
+
+    //void GameRestart()
+    //{
+    //    if (powerup == null)
+    //    {
+    //        // instantiate the selected prefab
+    //        GameObject powerup = Instantiate(powerupPrefab);
+    //        // remap the variables in the inspector
+    //        powerup = powerup;
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()

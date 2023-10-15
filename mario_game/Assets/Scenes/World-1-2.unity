@@ -2159,9 +2159,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2301993431053028937, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 514243095}
+    - target: {fileID: 2301993431053028937, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
+      propertyPath: powerupPrefab
+      value: 
+      objectReference: {fileID: 8606831684978510635, guid: ab7843badcaebaf49a0c2085bda304cc, type: 3}
+    - target: {fileID: 2301993431053028937, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
       propertyPath: powerupAnimator
       value: 
       objectReference: {fileID: 382718527}
+    - target: {fileID: 4676109221310061094, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4676109221310061094, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
       propertyPath: m_Constraints
       value: 4

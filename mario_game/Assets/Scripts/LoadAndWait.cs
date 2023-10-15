@@ -19,7 +19,7 @@ public class LoadAndWait : MonoBehaviour
         }
 
         // once done, go to next scene
-        // SceneManager.LoadSceneAsync("World-1-1", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("World-1-1", LoadSceneMode.Single);
     }
 
     public void ReturnToMain()
