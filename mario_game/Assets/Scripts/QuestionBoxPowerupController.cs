@@ -18,16 +18,31 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
 
     }
 
+    IEnumerator activatePowerup(BasePowerup powerup)
+    {
+        // turn on collider and set dynamic 
+        powerup.GetComponent<BoxCollider2D>().enabled = true;
+        powerup.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        // typically contain a yield return statement
+        yield return new WaitForSeconds(0.1f);        
+        // spawn the powerup
+        powerupAnimator.SetTrigger("spawned");
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player" && !powerup.hasSpawned)
         {
             Debug.Log("QBMP collided with player");
-            // show disabled sprite
-            this.GetComponent<Animator>().SetTrigger("spawned");
-            // spawn the powerup
-            powerupAnimator.SetTrigger("spawned");
+            Vector2 direction = transform.position - other.transform.position;
+            bool isForceUp = Vector2.Dot(direction.normalized, Vector2.up) > 0.25f;
+            Debug.Log("dot pdt is " + Vector2.Dot(direction.normalized, Vector2.up));
+            if (isForceUp)
+            {
+                // activate the powerup components
+                StartCoroutine(activatePowerup(powerup));
+                this.GetComponent<Animator>().SetTrigger("spawned");
+            }
         }
     }
 

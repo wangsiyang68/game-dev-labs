@@ -415,6 +415,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &382718527 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4795795040111837125, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
+  m_PrefabInstance: {fileID: 1545307265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &467597981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,6 +2158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2301993431053028937, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
+      propertyPath: powerupAnimator
+      value: 
+      objectReference: {fileID: 382718527}
     - target: {fileID: 4676109221310061094, guid: c28ba5d4ddd66104c95887381e1803c6, type: 3}
       propertyPath: m_Constraints
       value: 4
