@@ -24,23 +24,26 @@ public class QuestionBlockController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (questionBlockBody.velocity.y == 0 && collided)
-        {
-            // set the rigidbody to static when the block has stopped moving after it is hit
-            questionBlockBody.bodyType = RigidbodyType2D.Static;
-            questionBlockSpring.enabled = false;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("QB Collided with mario!");
-        // change the sprite to a brown block
-        questionBlockSprite.sprite = block_brown;
-        // stop the blinking animation
-        questionBlockAnimator.enabled = false;
-        // set collided to true
-        collided = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Vector2 direction = transform.position - other.transform.position;
+            bool isForceUp = Vector2.Dot(direction.normalized, Vector2.up) > 0.25f;
+            Debug.Log("dot pdt is " + Vector2.Dot(direction.normalized, Vector2.up));
+            if (isForceUp)
+            {
+                Debug.Log("QB Collided by Mario from the bottom!");  
+                // change the sprite to a brown block
+                questionBlockSprite.sprite = block_brown;
+                // stop the blinking animation
+                questionBlockAnimator.SetTrigger("spawned");
+                // set collided to true
+                collided = true;
+            }
+        }
     }
 
 
