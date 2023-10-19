@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5344405617155991101}
   - component: {fileID: 6516382379910000161}
   - component: {fileID: 7636547602478080789}
-  - component: {fileID: 8811087352599788099}
   m_Layer: 0
   m_Name: mushroom
   m_TagString: Untagged
@@ -107,34 +106,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8811087352599788099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292925903003732642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86af14fbd1e1917479848b94ab155261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parameter: 0
-  useInt:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3082056501712739781}
-        m_TargetAssemblyTypeName: MagicMushroomPowerup, Assembly-CSharp
-        m_MethodName: SpawnPowerup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8606831684978510635
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3817707133060989044}
-  - component: {fileID: 3082056501712739781}
   - component: {fileID: 1526174440943657846}
   - component: {fileID: 7750837020561131254}
   m_Layer: 0
@@ -170,20 +140,6 @@ Transform:
   - {fileID: 5344405617155991101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3082056501712739781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8606831684978510635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba21062d6219283498b4ba51bdb23871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  spawned: 0
 --- !u!61 &1526174440943657846
 BoxCollider2D:
   m_ObjectHideFlags: 0
